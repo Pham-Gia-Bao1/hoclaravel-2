@@ -14,7 +14,6 @@
         <h3 class="product-card__title">
             <a href="{{route('ProductDetail')}}">{{$title}}</a>
             {{-- <a href="{{route('ProductDetail')}}">Lavazza - Caffè Espresso Black Tin - Ground coffee</a> --}}
-
         </h3>
         {{-- name product --}}
         <p class="product-card__brand">Welikecoffee</p>

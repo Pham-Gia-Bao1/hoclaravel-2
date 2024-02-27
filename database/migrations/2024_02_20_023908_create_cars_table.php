@@ -1,43 +1,30 @@
 <?php
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
-        Schema::create('cars', function (Blueprint $table) {
+        Schema::create('coffe', function (Blueprint $table) {
             $table->id();
-            $table->string('description');
-            $table->string('model');
-            $table->date('created');
+            $table->string('name');
+            $table->string('size');
+            $table->string('weight');
+            $table->decimal('price', 8, 2);
+            $table->json('images')->nullable(); // Thêm cột để lưu trữ đường dẫn ảnh
+            $table->string('reviews');
+            $table->string('rating');
+            // Thêm các trường khác nếu cần thiết
+
             $table->timestamps();
         });
-
-        // Add 'image' column and rename 'make' column to 'description'
-        Schema::table('cars', function (Blueprint $table) {
-            $table->string('image')->nullable();
-            $table->renameColumn('make', 'description');
-        });
     }
 
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
-        // In the 'down' method, reverse the changes made in 'up'
-
-        Schema::dropIfExists('cars');
+        Schema::dropIfExists('coffe');
     }
 };
+

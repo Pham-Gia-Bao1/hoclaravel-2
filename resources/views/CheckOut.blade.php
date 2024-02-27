@@ -262,9 +262,7 @@
                             <span>Estimated Total</span>
                             <span>$201.65</span>
                         </div>
-                        <a href="shipping" class="cart-info__next-btn btn btn--primary btn--rounded">
-                            Continue to checkout
-                        </a>
+                        <x-button content="Continue to checkout" border_radius="" link="shipping" ></x-button>
                     </div>
                     <div class="cart-info">
                         <a href="#!">

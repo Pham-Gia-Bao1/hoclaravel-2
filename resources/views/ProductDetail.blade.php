@@ -152,9 +152,9 @@
                                             </div>
                                             <p class="prod-info__total-price">$540.00</p>
                                             <div class="prod-info__row">
-                                                <button class="btn btn--primary prod-info__add-to-cart">
-                                                    Add to cart
-                                                </button>
+                                                {{-- button coomponent --}}
+                                                <x-button content="Add to card" border_radius="rounded" ></x-button>
+                                                
                                                 <button class="like-btn prod-info__like-btn">
                                                     <img
                                                         src="./assets/icons/heart.svg"
