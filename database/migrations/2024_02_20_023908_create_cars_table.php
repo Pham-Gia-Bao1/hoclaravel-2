@@ -7,6 +7,7 @@ return new class extends Migration
 {
     public function up()
     {
+        // run "php artisan migrate" to create table
         Schema::create('coffe', function (Blueprint $table) {
             $table->id();
             $table->string('name');

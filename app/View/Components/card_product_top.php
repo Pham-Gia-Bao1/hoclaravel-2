@@ -11,9 +11,10 @@ class card_product_top extends Component
      *
      * @return void
      */
-    public $img,$title,$price;
-    public function __construct($img, $title, $price)
+    public $id,$img,$title,$price;
+    public function __construct($img, $title, $price,$id=1)
     {
+        $this->id=$id;
         $this->img = $img;
         $this->title = $title;
         $this->price = $price;

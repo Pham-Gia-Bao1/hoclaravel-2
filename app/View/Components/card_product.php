@@ -11,21 +11,19 @@ class card_product extends Component
      *
      * @return void
      */
+    public $id; // Add the id property
+    public $title;
+    public $img;
+    public $price;
+    public $rating;
 
-     public $title = 'Card Product';
-        public $img = './assets/img/product/item-1.png';
-        public $price = 'price';
-        public $rating = 'rating';
-        public $nameShop = 'Lay Coffe';
-
-    public function __construct($title,$img, $price,$rating)
+    public function __construct($id = 1, $title, $img, $price, $rating)
     {
-        //
+        $this->id = $id;
         $this->title = $title;
-        $this->img= $img;
-        // $this->nameShop=$name_shop;
-        $this->price=$price;
-        $this->rating=$rating;
+        $this->img = $img;
+        $this->price = $price;
+        $this->rating = $rating;
     }
 
     /**

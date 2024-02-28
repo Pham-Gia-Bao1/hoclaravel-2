@@ -1,5 +1,6 @@
 <?php
-
+// run seededr to add data into database
+// php artisan db:seed --class=CoffeSeeder
 namespace Database\Seeders;
 
 use Database\Factories\CoffeFactory;
@@ -10,12 +11,13 @@ class CoffeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
+     * php artisan db:seed --class=CoffeSeeder
      *
      * @return void
      */
     public function run()
     {
-        // Sample data for seeding
+        //
 //        insert data in table
         $coffees = [
             [
@@ -33,7 +35,7 @@ class CoffeSeeder extends Seeder
         ];
 
         // Use the factory to create 10 sample records
-        for ($i = 0; $i < 3; ++$i) {
+        for ($i = 0; $i < 10; ++$i) {
             DB::table('coffe')->insert(CoffeFactory::definition());
         }
     }

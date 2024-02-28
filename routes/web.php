@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CarController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
@@ -15,9 +16,7 @@ use App\Http\Middleware\Authenticate;
 |
 */
 
-Route::get('/', function () {
-    return view('Home');
-});
+Route::get('/',[HomeController::class,'index']);
 
 // Route::get('/layout', function () {
 //     return view('Layout/layout');
