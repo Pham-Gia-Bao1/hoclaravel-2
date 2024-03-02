@@ -17,6 +17,7 @@
         <!-- Breadcrumbs -->
         <div class="product-container">
             <ul class="breadcrumbs">
+                @foreach ($data as $item)
                 <li>
                     <a href="#!" class="breadcrumbs__link">
                         Departments
@@ -24,51 +25,50 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#!" class="breadcrumbs__link">
+                    <a href="/" class="breadcrumbs__link">
                         Coffee
                         <img src="./assets/icons/arrow-right.svg" alt="" />
                     </a>
                 </li>
                 <li>
-                    <a href="#!" class="breadcrumbs__link">
+                    <a href="ProductDetail?id={{$item->id}}" class="breadcrumbs__link">
                         Coffee Beans
                         <img src="./assets/icons/arrow-right.svg" alt="" />
                     </a>
                 </li>
                 <li>
-                    <a href="#!" class="breadcrumbs__link breadcrumbs__link--current">LavAzza</a>
+                    <a href="ProductDetail?id={{$item->id}}" class="breadcrumbs__link breadcrumbs__link--current">{{$item->name}}</a>
                 </li>
+                @endforeach
             </ul>
         </div>
 
         <!-- Product info -->
+        @foreach ($data as $item)
+
+
         <div class="product-container prod-info-content">
             <div class="row">
                 <div class="col-5 col-xl-6 col-lg-12">
                     <div class="prod-preview">
                         <div class="prod-preview__list">
                             <div class="prod-preview__item">
-                                <img src="./assets/img/product/item-1.png" alt="" class="prod-preview__img" />
+                                <img src="./assets/img/product/{{ json_decode($item->images)[0] }}" alt="" class="prod-preview__img" />
                             </div>
                             <div class="prod-preview__item">
-                                <img src="./assets/img/product/item-2.png" alt="" class="prod-preview__img" />
+                                <img src="./assets/img/product/{{ json_decode($item->images)[0] }}" alt="" class="prod-preview__img" />
                             </div>
-                            <div class="prod-preview__item">
-                                <img src="./assets/img/product/item-3.png" alt="" class="prod-preview__img" />
-                            </div>
-                            <div class="prod-preview__item">
-                                <img src="./assets/img/product/item-4.png" alt="" class="prod-preview__img" />
-                            </div>
+
                         </div>
                         <div class="prod-preview__thumbs">
                             <img
-                                src="./assets/img/product/item-1.png"
+                                src="./assets/img/product/{{ json_decode($item->images)[0] }}"
                                 alt=""
                                 class="prod-preview__thumb-img prod-preview__thumb-img--current"
                             />
-                            <img src="./assets/img/product/item-2.png" alt="" class="prod-preview__thumb-img" />
-                            <img src="./assets/img/product/item-3.png" alt="" class="prod-preview__thumb-img" />
-                            <img src="./assets/img/product/item-4.png" alt="" class="prod-preview__thumb-img" />
+                            <img src="./assets/img/product/{{ json_decode($item->images)[1] }}" alt="" class="prod-preview__thumb-img" />
+                            <img src="./assets/img/product/{{ json_decode($item->images)[2] }}" alt="" class="prod-preview__thumb-img" />
+                            <img src="./assets/img/product/{{ json_decode($item->images)[3] }}" alt="" class="prod-preview__thumb-img" />
                         </div>
                     </div>
                 </div>
@@ -76,33 +76,25 @@
                     <form action="" class="form">
                         <section class="prod-info">
                             <h1 class="prod-info__heading">
-                                Coffee Beans - Espresso Arabica and Robusta Beans
+                                {{$item->name}}
                             </h1>
                             <div class="row">
                                 <div class="col-5 col-xxl-6 col-xl-12">
                                     <div class="prod-prop">
                                         <img src="./assets/icons/star.svg" alt="" class="prod-prop__icon" />
-                                        <h4 class="prod-prop__title">(3.5) 1100 reviews</h4>
+                                        <h4 class="prod-prop__title">({{$item->rating}}) 1100 reviews</h4>
                                     </div>
                                     <label for="" class="form__label prod-info__label">Size/Weight</label>
                                     <div class="filter__form-group">
                                         <div class="form__select-wrap">
-                                            <div class="form__select" style="--width: 146px">
-                                                500g
-                                                <img
-                                                    src="./assets/icons/select-arrow.svg"
-                                                    alt=""
-                                                    class="form__select-arrow icon"
-                                                />
-                                            </div>
-                                            <div class="form__select">
-                                                Gram
-                                                <img
-                                                    src="./assets/icons/select-arrow.svg"
-                                                    alt=""
-                                                    class="form__select-arrow icon"
-                                                />
-                                            </div>
+
+                                                <select style="--width: 140px" class=" form__select">
+                                                    <option  selected>200</option>
+                                                    <option value="300">300</option>
+                                                    <option value="400">400</option>
+                                                    <option value="500">500</option>
+                                                  </select>
+                                                <div class=" form__select">Gam</div>
                                         </div>
                                     </div>
                                     <div class="filter__form-group">
@@ -147,14 +139,14 @@
                                         </div>
                                         <div class="prod-info__card">
                                             <div class="prod-info__row">
-                                                <span class="prod-info__price">$500.00</span>
+                                                <span class="prod-info__price">${{$item->price}}</span>
                                                 <span class="prod-info__tax">10%</span>
                                             </div>
                                             <p class="prod-info__total-price">$540.00</p>
                                             <div class="prod-info__row">
                                                 {{-- button coomponent --}}
                                                 <x-button content="Add to card" border_radius="rounded" ></x-button>
-                                                
+
                                                 <button class="like-btn prod-info__like-btn">
                                                     <img
                                                         src="./assets/icons/heart.svg"
@@ -177,6 +169,7 @@
                 </div>
             </div>
         </div>
+        @endforeach
 
         <!-- Product content -->
         <div class="product-container">
@@ -207,7 +200,7 @@
                                         rem voluptas nam! Voluptatem.
                                     </p>
                                     <p>
-                                        <img src="./assets/img/product/item-1.png" alt="" />
+                                        <img src="./assets/img/product/{{ json_decode($item->images)[0] }}" alt="" />
                                         <em>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</em>
                                     </p>
                                     <blockquote>
@@ -243,7 +236,7 @@
                                         rem voluptas nam! Voluptatem.
                                     </p>
                                     <p>
-                                        <img src="./assets/img/product/item-1.png" alt="" />
+                                        <img src="./assets/img/product/{{ json_decode($item->images)[0] }}" alt="" />
                                         <em>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</em>
                                     </p>
                                     <p>
@@ -275,7 +268,7 @@
                                         rem voluptas nam! Voluptatem.
                                     </p>
                                     <p>
-                                        <img src="./assets/img/product/item-1.png" alt="" />
+                                        <img src="./assets/img/product/{{ json_decode($item->images)[0] }}" alt="" />
                                         <em>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</em>
                                     </p>
                                     <p>

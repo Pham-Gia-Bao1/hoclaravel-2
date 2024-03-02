@@ -7,10 +7,12 @@
                 <a  href="{{route('ProductDetail',['id' => $id])}}">
                     <img src="{{$img}}" alt="" class="product-card__thumb" />
                 </a>
+
                 <button class="like-btn like-btn--liked product-card__like-btn">
-                    <img src="./assets/icons/heart.svg" alt="" class="like-btn__icon icon" />
+                    <img  src="./assets/icons/heart.svg" alt="" class="like-btn__icon icon" />
                     <img src="./assets/icons/heart-red.svg" alt="" class="like-btn__icon--liked" />
                 </button>
+                
             </div>
             <h3 class="product-card__title">
                 <a href="{{route('ProductDetail',['name' => $title])}}">{{$title}}</a>

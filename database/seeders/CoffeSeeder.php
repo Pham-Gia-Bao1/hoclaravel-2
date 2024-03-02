@@ -24,7 +24,7 @@ class CoffeSeeder extends Seeder
                 'name' => 'Americano',
                 'size' => 'Medium',
                 'weight' => '250g',
-                'price' => 3.99,
+                'price' => 100.000,
                 'images' => json_encode(['item-1.png', 'item-2.png', 'item-3.png', 'item-4.png', 'item-5.png']),
                 'reviews' => 'Good coffee, nice flavor',
                 'rating' => '4.5',

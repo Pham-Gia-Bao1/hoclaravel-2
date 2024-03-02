@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\CoffeModel;
 class DetailCoffeController extends Controller
 {
     /**
@@ -11,6 +11,11 @@ class DetailCoffeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    private $coffe;
+    public function __construct()
+    {
+        $this->coffe = new CoffeModel(); // Move the instantiation to the constructor
+    }
     public function index()
     {
         //
@@ -43,9 +48,11 @@ class DetailCoffeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
-        //
+        $id = $request->get('id');
+        $data = $this->coffe->all()->where('id', '=', $id); // Access the property using $this->coffe
+        return view('ProductDetail',compact('data'));
     }
 
     /**
