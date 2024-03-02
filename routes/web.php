@@ -1,8 +1,13 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CarController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
+use App\Http\Controllers\DetailCoffeController;
+use App\Http\Controllers\TestController;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\Authenticate;
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +20,9 @@ use App\Http\Middleware\Authenticate;
 |
 */
 
-Route::get('/', function () {
-    return view('Home');
-});
+Route::get('/',[HomeController::class,'index']);
+
+
 
 // Route::get('/layout', function () {
 //     return view('Layout/layout');
@@ -30,9 +35,10 @@ Route::get('/sign-up', function () {
     return view('SignUp');
 })->name('sign-up');
 
-Route::get('ProductDetail', function () {
-    return view('ProductDetail');
-})->name('ProductDetail');
+//Route::get('ProductDetail', function () {
+//    return view('ProductDetail');
+//})->name('ProductDetail');
+Route::get('ProductDetail',[DetailCoffeController::class,'show'])->name('ProductDetail');
 
 Route::get('favourite', function () {
     return view('Favourite');
@@ -65,4 +71,16 @@ Route::get('payment', function () {
 Route::get('AddNewCard', function () {
     return view('AddNewCard');
 })->name('AddNewCard');
+
+//Route::get('/set_cookie',function(){
+//        $reponse = (new Response())->cookie('unicode', 'day laf cookie ', '30');
+//        return $reponse;
+//})->name('cookie');
+//Route::get('/get_cookie',function(Request $request){
+//     return $request->cookie('unicode');
+//
+//});
+// Route::get('test',[TestController::class, 'index'])->name('test');
+
+Route::get('test',[TestController::class, 'downloadDoc'])->name('test');
 

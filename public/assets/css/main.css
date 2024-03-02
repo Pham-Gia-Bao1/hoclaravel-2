@@ -4613,5 +4613,26 @@ html {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     transform: scale(1.05); /* Increase the scale on hover (you can adjust the value) */
 }
+.row-top{
+    overflow-x: scroll;
+    gap: 20px;
+    padding-bottom: 10px;
+}
+.row-top::-webkit-scrollbar {
+    width: 12px;
+    border-radius: 10px;
+}
+.row-top::-webkit-scrollbar-thumb {
+    background-color: #77DAE6;
+    border-radius: 10px;
+}
 
-/*# sourceMappingURL=main.css.map */
+
+.form__select{
+ background: var(--product-detail-info-bg);
+
+}
+.form__select option{
+    /* background-color: #0071dc; */
+    padding: 20px !important;
+}

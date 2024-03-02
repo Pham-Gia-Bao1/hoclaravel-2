@@ -293,7 +293,7 @@
                                     </a>
                                 </div>
                                 <a
-                                    href="./checkout.html"
+                                    href="checkout"
                                     class="cart-info__checkout-all btn btn--primary btn--rounded"
                                 >
                                     All Check Out

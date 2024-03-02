@@ -33,14 +33,21 @@
                 <div class="home__row">
                     <h2 class="home__heading">Browse Categories</h2>
                 </div>
-                <div class="home__cate row row-cols-3 row-cols-md-1">
+                <div class="d-flex gap-3 row-top  row-cols-3 row-cols-md-1 no-gutters flex-nowrap overflow-scroll ">
 
                     <!-- Category item  -->
                     {{-- component --}}
-                    @for($a = 0; $a < 3; $a++)
+                    @foreach ($data as $item)
+
                     <!-- Product card 2 -->
-                    <x-card_product_top img='./assets/img/product/item-1.png' title="tên sẩn phẩm tay vào đây" price='900' />
-                    @endfor
+                    <x-card_product_top
+                        title="{{ $item->name }}"
+                        img="./assets/img/product/{{ json_decode($item->images)[0] }}"
+                        price="{{$item->price}}"
+
+                        id="{{ $item->id }}"
+                        />
+                    @endforeach
 
                 </div>
             </section>
@@ -178,40 +185,22 @@
                 </div>
 
                 <div class="row row-cols-5 row-cols-lg-2 row-cols-sm-1 g-3">
-                    <!-- Product card 1 -->
-                    <div class="col">
-                        <article class="product-card">
-                            <div class="product-card__img-wrap">
-                                <a href="{{route('ProductDetail')}}">
-                                    <img src="./assets/img/product/item-1.png" alt="" class="product-card__thumb" />
-                                </a>
-                                <button class="like-btn product-card__like-btn">
-                                    <img src="./assets/icons/heart.svg" alt="" class="like-btn__icon icon" />
-                                    <img src="./assets/icons/heart-red.svg" alt="" class="like-btn__icon--liked" />
-                                </button>
-                            </div>
-                            <h3 class="product-card__title">
-                                <a href="{{route('ProductDetail')}}">Coffee Beans - Espresso Arabica and Robusta Beans</a>
-                            </h3>
-                            <p class="product-card__brand">Lavazza</p>
-                            <div class="product-card__row">
-                                <span class="product-card__price">$47.00</span>
-                                <img src="./assets/icons/star.svg" alt="" class="product-card__star" />
-                                <span class="product-card__score">4.3</span>
-                            </div>
-                        </article>
-                    </div>
                    {{-- component --}}
-                    @for($a = 0; $a < 9; $a++)
-                    <!-- Product card 2 -->
+                    @foreach ($data as $item)
+                         <!-- Product card 2 -->
                     <x-card_product
-                    title="thay name product lấy từ databse vào đây "
-                    img="./assets/img/product/item-1.png"
-                    price='$47.00'
-                    rating='4.3' />
-                    @endfor
+                    title="{{ $item->name }}"
+                    img="./assets/img/product/{{ json_decode($item->images)[0] }}"
+                    price="{{$item->price}}"
+                    rating="{{$item->rating}}"
+                    id="{{ $item->id }}"
+                />
+                    @endforeach
+
                 </div>
             </section>
         </main>
+
+
 
     @endsection
