@@ -30,7 +30,7 @@
                             <h3 class="profile-menu__title">Manage Account</h3>
                             <ul class="profile-menu__list">
                                 <li>
-                                    <a href="./edit-personal-info.html" class="profile-menu__link">
+                                    <a href="profile_edit" class="profile-menu__link">
                                         <span class="profile-menu__icon">
                                             <img src="./assets/icons/profile.svg" alt="" class="icon" />
                                         </span>

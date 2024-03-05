@@ -48,7 +48,7 @@ Route::get('checkout', function () {
     return view('CheckOut');
 })->name('CheckOut');
 
-Route::get('profile_info', function () {
+Route::get('profile', function () {
     return view('profile.Wallet');
 })->name('Profile');
 
