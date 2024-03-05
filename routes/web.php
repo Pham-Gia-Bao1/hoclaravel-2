@@ -48,9 +48,13 @@ Route::get('checkout', function () {
     return view('CheckOut');
 })->name('CheckOut');
 
-Route::get('profile', function () {
-    return view('Profile');
+Route::get('profile_info', function () {
+    return view('profile.Wallet');
 })->name('Profile');
+
+Route::get('profile_edit', function () {
+    return view('profile.Edit_info_profile');
+})->name('profile.edit'); // Đặt tên đặc biệt cho route
 
 Route::get('forgot-password', function () {
     return view('ResetPassword');
