@@ -1,6 +1,26 @@
 
 @extends('profile.Profile')
 @section('content-profile')
+@section('profile-css')
+       <style>
+            .notification{
+                background-color: greenyellow;
+                position: absolute;
+                right: 10px;
+                padding: 30px;
+                display: block;
+            }
+       </style>
+       <script>
+           setTimeout(function(){
+               document.getElementById('notification').style.display = 'none';
+           },3000)
+       </script>
+@endsection
+
+@if (isset($success))
+    <h1 class="notification" id="notification" >{{$success}}</h1>
+@endif
 
 <div class="col-12 content-profile ">
 

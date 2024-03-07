@@ -5,6 +5,17 @@
     <div class="cart-info">
         <div class="row gy-3">
             <div class="col-12">
+                <h2 class="cart-info__heading">
+                    <a href="profile">
+                        <img
+                            src="./assets/icons/arrow-left.svg"
+                            alt=""
+                            class="icon cart-info__back-arrow"
+                        />
+                    </a>
+                    Edit personal infomations
+
+                </h2>
                                 <form action="profile" method="post" class="form form-card">
                                     <input type="hidden" name="id" value="1">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -112,7 +123,7 @@
                                     </div>
 
                                     <div class="form-card__bottom">
-                                        <a class="btn btn--text" href="./profile.html">Cancel</a>
+                                        <a class="btn btn--text" href="profile">Cancel</a>
                                         <button class="btn btn--primary btn--rounded">Save</button>
                                     </div>
                                 </form>

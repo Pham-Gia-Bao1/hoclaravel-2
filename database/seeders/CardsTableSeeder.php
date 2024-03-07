@@ -17,6 +17,7 @@ class CardsTableSeeder extends Seeder
     public function run()
     {
         DB::table('cards')->insert([
+            'user_id' => 1,
             'first_name' => 'John',
             'last_name' => 'Doe',
             'card_number' => '1234567890123456',

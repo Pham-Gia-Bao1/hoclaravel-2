@@ -1,7 +1,6 @@
 @extends('profile.Profile')
 @section('content-profile')
 
-
 <div class="col-12 col-xl-12 col-lg-12">
     <div class="cart-info">
         <div class="row gy-3">
@@ -15,12 +14,10 @@
                         />
                     </a>
                     Add credit or debit card
-
                 </h2>
-
-
                 <form action="create_card" method="post" class="form form-card">
                     <!-- Form row 1 -->
+                    <input type="hidden" value=1 name="user_id">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <div class="form__row">
                         <div class="form__group">
@@ -199,10 +196,8 @@
                             <span class="form__checkbox-label">Set as default card</span>
                         </label>
                     </div>
-
-
                     <div class="form-card__bottom">
-                        <a class="btn btn--text" href="./profile.html">Cancel</a>
+                        <a class="btn btn--text" href="profile">Cancel</a>
                         <button class="btn btn--primary btn--rounded">Save card</button>
                     </div>
                 </form>

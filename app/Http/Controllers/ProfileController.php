@@ -11,7 +11,8 @@ class ProfileController extends Controller
     //
     public function index()
     {
-        return view('profile.Wallet');
+        $success = session('success');
+        return view('profile.Wallet',compact('success'));
     }
 
     public function edit_profile(Request $request)
@@ -37,12 +38,14 @@ class ProfileController extends Controller
             // You might want to add a success message here or handle success in some way
             return $this->index()->with('success', 'Profile updated successfully');
         }
-        return $this->index();
+        return redirect()->back()->with('error', 'User not found.');
+
     }
 
     public function create_card(Request $request)
     {
         $validationRules = [
+
             'first_name' => 'required|min:5',
             'last_name' => 'required|min:5',
             'card_number' => 'required|numeric|digits:16',
@@ -54,15 +57,16 @@ class ProfileController extends Controller
         // Thực hiện validate nếu cần
         if ($request->validate($validationRules)) {
             // Thêm mã logic xử lý sau khi validate thành công
-            $info = $request->only('first_name', 'last_name', 'card_number', 'expiration_date', 'cvv', 'phone_number');
+            $info = $request->only('user_id','first_name', 'last_name', 'card_number', 'expiration_date', 'cvv', 'phone_number');
             $info['set_default_card'] = $request->input('set_default_card', '0');
-            $card = new Card();
             // dd($info);
+            $card = new Card();
+            // // dd($info);
             $card->create($info);
 
-            return $this->index()->with('Card_success', 'Card created successfully.');
+            return $this->index()->with('success', 'Card created successfully.');
         }
-        return redirect()->back()->with('Card_error', 'User not found.');
+        return redirect()->back()->with('error', 'User not found.');
     }
 
     // Sử dụng chuỗi điều kiện

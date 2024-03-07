@@ -17,13 +17,14 @@ class CardFactory extends Factory
     public function definition()
     {
         return [
+            'user_id' => \App\Models\User::factory()->create()->id,
             'first_name' => $this->faker->firstName,
             'last_name' => $this->faker->lastName,
             'card_number' => $this->faker->creditCardNumber,
             'expiration_date' => $this->faker->date,
             'cvv' => $this->faker->randomNumber(3),
             'phone_number' => $this->faker->randomNumber(8, true) * 10,
-            'set_default_card' => $this->faker->boolean, 
+            'set_default_card' => $this->faker->boolean,
         ];
     }
 }

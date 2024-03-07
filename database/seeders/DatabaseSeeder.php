@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
+        // run database seedder 'php artisan db:seed'
         $carfactory = new CardFactory();
         $serFactory = new UserFactory();
 
