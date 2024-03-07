@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers;
 use App\Http\Controllers\DetailCoffeController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TestController;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -51,6 +52,14 @@ Route::get('checkout', function () {
 Route::get('profile', function () {
     return view('profile.Wallet');
 })->name('Profile');
+
+Route::post('profile',[ProfileController::class, 'edit_profile'])->name('Profile');
+
+Route::get('create_card', function (){
+    return view('profile.Add-new-card');
+});
+Route::post('create_card',[ProfileController::class, 'create_card']);
+
 
 Route::get('profile_edit', function () {
     return view('profile.Edit_info_profile');

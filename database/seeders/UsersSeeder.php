@@ -19,9 +19,9 @@ class UsersSeeder extends Seeder
     public function run()
     {
         //
-        $serFactory = new UserFactory();
-        for ($i = 0; $i < 10; ++$i) {
-            DB::table('users')->insert($serFactory->definition());
-        }
+        // $serFactory = new UserFactory();
+        // for ($i = 0; $i < 10; ++$i) {
+        //     DB::table('users')->insert($serFactory->definition());
+        // }
     }
 }

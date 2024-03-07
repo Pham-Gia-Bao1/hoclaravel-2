@@ -64,7 +64,7 @@
 
         <!-- Add new payment card -->
         <div class="col">
-            <a class="new-card" href="./add-new-card.html">
+            <a class="new-card" href="create_card">
                 <img
                     src="./assets/icons/plus.svg"
                     alt=""
@@ -73,6 +73,7 @@
                 <p class="new-card__text">Add New Card</p>
             </a>
         </div>
+
     </div>
 </div>
 

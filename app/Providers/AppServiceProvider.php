@@ -33,7 +33,5 @@ class AppServiceProvider extends ServiceProvider
         Blade::component('card_product_top',card_product_top::class);
         Blade::component('button',button::class);
 
-
-
     }
 }

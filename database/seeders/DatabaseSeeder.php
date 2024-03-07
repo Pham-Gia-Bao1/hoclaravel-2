@@ -2,8 +2,13 @@
 
 namespace Database\Seeders;
 
+use Illuminate\Support\Facades\DB;
+use Database\Factories\CardFactory;
+use Database\Factories\CoffeFactory;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+
+use Database\Factories\UserFactory;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,5 +25,14 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        $carfactory = new CardFactory();
+        $serFactory = new UserFactory();
+
+        for ($i = 0; $i < 10; ++$i) {
+            DB::table('users')->insert($serFactory->definition());
+            DB::table('cards')->insert($carfactory->definition());
+            DB::table('coffe')->insert(CoffeFactory::definition());
+        }
     }
 }

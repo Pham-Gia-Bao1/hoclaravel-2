@@ -35,8 +35,6 @@ class CoffeSeeder extends Seeder
         ];
 
         // Use the factory to create 10 sample records
-        for ($i = 0; $i < 10; ++$i) {
-            DB::table('coffe')->insert(CoffeFactory::definition());
-        }
+        
     }
 }

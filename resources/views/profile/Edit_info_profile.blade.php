@@ -1,9 +1,15 @@
 @extends('profile.Profile')
 @section('content-profile')
 
-
-                                <form action="./profile.html" class="form form-card">
+<div class="col-12 col-xl-8 col-lg-12">
+    <div class="cart-info">
+        <div class="row gy-3">
+            <div class="col-12">
+                                <form action="profile" method="post" class="form form-card">
+                                    <input type="hidden" name="id" value="1">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <!-- Form row 1 -->
+
                                     <div class="form__row">
                                         <div class="form__group">
                                             <label for="full-name" class="form__label form-card__label">
@@ -12,7 +18,7 @@
                                             <div class="form__text-input">
                                                 <input
                                                     type="text"
-                                                    name=""
+                                                    name="name"
                                                     id="full-name"
                                                     placeholder="Full name"
                                                     class="form__input"
@@ -25,7 +31,9 @@
                                                     class="form__input-icon-error"
                                                 />
                                             </div>
-                                            <p class="form__error">Please enter your full name</p>
+                                            @error('name')
+                                                <span style="color: red; margin-top:5px;" class="text-danger">{{ $message }}</span>
+                                            @enderror
                                         </div>
                                         <div class="form__group">
                                             <label for="email-adress" class="form__label form-card__label">
@@ -34,7 +42,7 @@
                                             <div class="form__text-input">
                                                 <input
                                                     type="text"
-                                                    name=""
+                                                    name="email"
                                                     id="email-adress"
                                                     placeholder="Email address"
                                                     class="form__input"
@@ -46,7 +54,10 @@
                                                     class="form__input-icon-error"
                                                 />
                                             </div>
-                                            <p class="form__error">Please enter a valid email address</p>
+                                            @error('email')
+                                            <span style="color: red; margin-top:5px;" class="text-danger">{{ $message }}</span>
+                                            @enderror
+
                                         </div>
                                     </div>
 
@@ -59,7 +70,7 @@
                                             <div class="form__text-input">
                                                 <input
                                                     type="text"
-                                                    name=""
+                                                    name="phone_number"
                                                     id="phone-number"
                                                     placeholder="Phone Number"
                                                     class="form__input"
@@ -71,7 +82,9 @@
                                                     class="form__input-icon-error"
                                                 />
                                             </div>
-                                            <p class="form__error">Please enter a valid phone number</p>
+                                            @error('phone_number')
+                                            <span style="color: red; margin-top:5px;" class="text-danger">{{ $message }}</span>
+                                            @enderror
                                         </div>
                                         <div class="form__group">
                                             <label for="passowrd" class="form__label form-card__label">
@@ -80,7 +93,7 @@
                                             <div class="form__text-input">
                                                 <input
                                                     type="password"
-                                                    name=""
+                                                    name="password"
                                                     id="passowrd"
                                                     placeholder="Password"
                                                     class="form__input"
@@ -92,7 +105,9 @@
                                                     class="form__input-icon-error"
                                                 />
                                             </div>
-                                            <p class="form__error">Please enter new password</p>
+                                            @error('password')
+                                                <span style="color: red; margin-top:5px;" class="text-danger">{{ $message }}</span>
+                                            @enderror
                                         </div>
                                     </div>
 
@@ -101,4 +116,8 @@
                                         <button class="btn btn--primary btn--rounded">Save</button>
                                     </div>
                                 </form>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection

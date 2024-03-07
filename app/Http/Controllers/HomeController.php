@@ -20,11 +20,16 @@ class HomeController extends Controller
      {
          $this->coffe = new CoffeModel(); // Move the instantiation to the constructor
      }
- 
+
      public function index()
      {
          $data = $this->coffe->all(); // Access the property using $this->coffe
          return view('Home', compact('data'));
+     }
+
+     public function all_coffe(){
+        $data = $this->coffe->all();
+        return  response()->json($data);
      }
 
     /**
