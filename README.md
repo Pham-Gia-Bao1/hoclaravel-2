@@ -66,7 +66,7 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
 
-run preeze to have login
+-----> run preeze to have login <---------------------------------------------------
 ## composer require laravel/breeze --dev
 <!-- next step -->
 ## php artisan breeze:install
@@ -78,5 +78,5 @@ run preeze to have login
 ## php artisan migrate
 <!-- next step -->
 ## php artisan serve
-
+------------------------------------------------------------------------------------
 

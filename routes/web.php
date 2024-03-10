@@ -22,12 +22,14 @@ use App\Http\Middleware\Authenticate;
 */
 
 
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard',[HomeController::class,'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+    Route::get('create_card', function (){
+        return view('profile.Add-new-card');
+    });
+    Route::post('create_card',[ProfileController::class, 'create_card']);
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -37,22 +39,6 @@ require __DIR__.'/auth.php';
 
 Route::get('/',[HomeController::class,'index']);
 
-
-
-// Route::get('/layout', function () {
-//     return view('Layout/layout');
-// });
-Route::get('/sign-in', function () {
-    return view('SignIn');
-})->name('sign-in');
-
-Route::get('/sign-up', function () {
-    return view('SignUp');
-})->name('sign-up');
-
-//Route::get('ProductDetail', function () {
-//    return view('ProductDetail');
-//})->name('ProductDetail');
 Route::get('ProductDetail',[DetailCoffeController::class,'show'])->name('ProductDetail');
 
 Route::get('favourite', function () {
@@ -69,10 +55,6 @@ Route::get('profile', function () {
 
 Route::post('profile',[ProfileController::class, 'edit_profile'])->name('Profile');
 
-Route::get('create_card', function (){
-    return view('profile.Add-new-card');
-});
-Route::post('create_card',[ProfileController::class, 'create_card']);
 
 
 Route::get('profile_edit', function () {

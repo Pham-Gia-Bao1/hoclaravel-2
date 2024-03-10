@@ -48,7 +48,7 @@
                         <div class="form__group">
                             <div class="form__text-input">
                                 <input
-                                    type="email"
+                                    type="hidden"
                                     name=""
                                     id=""
                                     placeholder="Email"
@@ -56,6 +56,17 @@
                                     autofocus
                                     required
                                 />
+                                {{-- <x-text-input
+                                placeholder="Email"
+                                class="form__input"
+                                autofocus
+                                required
+                                id="email"
+                               name="email" :value="old('email')"
+                                autocomplete="username" /> --}}
+
+
+
                                 <img src="./assets/icons/message.svg" alt="" class="form__input-icon" />
                                 <img src="./assets/icons/form-error.svg" alt="" class="form__input-icon-error" />
                             </div>

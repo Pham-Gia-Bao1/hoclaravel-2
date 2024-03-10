@@ -54,7 +54,7 @@
                     </form>
 
                     <p class="auth__text">
-                        <a href="sign-in" class="auth__link auth__text-link">Back to Sign In</a>
+                        <a href="login" class="auth__link auth__text-link">Back to Sign In</a>
                     </p>
                 </div>
             </div>

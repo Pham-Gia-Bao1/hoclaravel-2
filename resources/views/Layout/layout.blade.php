@@ -34,9 +34,9 @@
         {{-- header --}}
         <header>
             <!-- place navbar here -->
-            {{-- @include('Layout.header') --}}
+            @include('Layout.header')
             {{-- nếu tồn ddax login thì --}}
-            @include('Layout.header-logined')
+            {{-- @include('Layout.header-logined') --}}
         </header>
 
         {{-- body --}}
