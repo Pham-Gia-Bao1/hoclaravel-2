@@ -15,7 +15,7 @@
                     </a>
                     Edit personal infomations
 
-                </h2>
+                            </h2>
                                 <form action="profile" method="post" class="form form-card">
                                     <input type="hidden" name="id" value="1">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -35,6 +35,7 @@
                                                     class="form__input"
                                                     required
                                                     autofocus
+                                                    value="{{old('name') ?? $user->name}}"
                                                 />
                                                 <img
                                                     src="./assets/icons/form-error.svg"
@@ -58,6 +59,8 @@
                                                     placeholder="Email address"
                                                     class="form__input"
                                                     required
+                                                    value="{{old('email') ?? $user->email}}"
+
                                                 />
                                                 <img
                                                     src="./assets/icons/form-error.svg"
@@ -86,6 +89,8 @@
                                                     placeholder="Phone Number"
                                                     class="form__input"
                                                     required
+                                                    value="{{old('phone_number') ?? $user->phone_number}}"
+
                                                 />
                                                 <img
                                                     src="./assets/icons/form-error.svg"
@@ -109,6 +114,9 @@
                                                     placeholder="Password"
                                                     class="form__input"
                                                     required
+                                                    value="{{old('password') ?? $user->password}}"
+
+
                                                 />
                                                 <img
                                                     src="./assets/icons/form-error.svg"

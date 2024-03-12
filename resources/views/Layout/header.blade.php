@@ -4721,7 +4721,7 @@
         </div>
 
         <div class="top-act__user">
-            <img src="./assets/img/avatar.jpg" alt="" class="top-act__avatar" />
+            <img src="./assets/img/avatar/{{Auth::user()->img}}" alt="" class="top-act__avatar" />
 
             <!-- Dropdown -->
             <div class="act-dropdown top-act__dropdown">
@@ -4733,7 +4733,7 @@
                     />
 
                     <div class="user-menu__top">
-                        <img src="./assets/img/avatar.jpg" alt="" class="user-menu__avatar" />
+                        <img src="./assets/img/avatar/{{Auth::user()->img}}" alt="" class="user-menu__avatar" />
                         <div>
                             <p class="user-menu__name">{{Auth::user()->name}}</p>
                             <p>{{Auth::user()->email}}</p>

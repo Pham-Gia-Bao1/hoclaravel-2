@@ -20,9 +20,9 @@
                     <aside class="profile__sidebar">
                         <!-- User -->
                         <div class="profile-user">
-                            <img src="./assets/img/avatar/avatar-3.png" alt="" class="profile-user__avatar" />
-                            <h1 class="profile-user__name">Imran Khan</h1>
-                            <p class="profile-user__desc">Registered: 17th May 2022</p>
+                            <img src="./assets/img/avatar/{{Auth::user()->img}}" alt="" class="profile-user__avatar" />
+                            <h1 class="profile-user__name">{{Auth::user()->name}}</h1>
+                            <p class="profile-user__desc">Registered: {{Auth::user()->created_at}}</p>
                         </div>
 
                         <!-- Menu 1 -->

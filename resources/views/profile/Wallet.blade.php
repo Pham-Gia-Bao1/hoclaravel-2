@@ -4,11 +4,13 @@
 @section('profile-css')
        <style>
             .notification{
-                background-color: greenyellow;
+                background-color: rgb(23, 225, 60);
                 position: absolute;
                 right: 10px;
                 padding: 30px;
                 display: block;
+                position: fixed;
+                border-radius: 5px;
             }
        </style>
        <script>
@@ -113,7 +115,7 @@
                     </div>
                     <div>
                         <h3 class="account-info__title">Email Address</h3>
-                        <p class="account-info__desc">tarek97.ta@gmail.com</p>
+                        <p class="account-info__desc">{{Auth::user()->email}}</p>
                     </div>
                 </article>
             </a>
@@ -128,7 +130,7 @@
                     </div>
                     <div>
                         <h3 class="account-info__title">Phone number</h3>
-                        <p class="account-info__desc">+000 11122 2345 657</p>
+                        <p class="account-info__desc">{{Auth::user()->phone_number}}</p>
                     </div>
                 </article>
             </a>
@@ -148,7 +150,7 @@
                     <div>
                         <h3 class="account-info__title">Add an address</h3>
                         <p class="account-info__desc">
-                            Bangladesh Embassy, Washington, DC 20008
+                            {{Auth::user()->address}}
                         </p>
                     </div>
                 </article>

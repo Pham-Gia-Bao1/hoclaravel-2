@@ -25,6 +25,7 @@ use App\Http\Middleware\Authenticate;
 Route::get('/dashboard',[HomeController::class,'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+    Route::get('profile_edit',[ProfileController::class,'get_info_user'])->name('profile.edit'); // Đặt tên đặc biệt cho route
     Route::get('create_card', function (){
         return view('profile.Add-new-card');
     });
@@ -57,9 +58,6 @@ Route::post('profile',[ProfileController::class, 'edit_profile'])->name('Profile
 
 
 
-Route::get('profile_edit', function () {
-    return view('profile.Edit_info_profile');
-})->name('profile.edit'); // Đặt tên đặc biệt cho route
 
 Route::get('forgot-password', function () {
     return view('ResetPassword');

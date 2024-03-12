@@ -17,7 +17,7 @@
                 </h2>
                 <form action="create_card" method="post" class="form form-card">
                     <!-- Form row 1 -->
-                    <input type="hidden" value=1 name="user_id">
+                    <input type="hidden" value={{Auth::user()->id}} name="user_id">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <div class="form__row">
                         <div class="form__group">
