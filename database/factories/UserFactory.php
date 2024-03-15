@@ -27,6 +27,7 @@ class UserFactory extends Factory
             'last_name' => fake()->lastName,
             'address' => fake()->address,
             'phone_number' => fake()->phoneNumber,
+            'img' => 'avatar-'. fake()->numberBetween(1, 10) .'.png',
             'created_at' => now(),
             'updated_at' => now(),
         ];

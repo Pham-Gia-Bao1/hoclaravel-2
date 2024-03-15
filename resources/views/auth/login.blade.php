@@ -122,12 +122,16 @@
                                 {{ __('Log in') }}
                             </x-primary-button>
                             {{-- <button class="btn btn--primary auth__btn form__submit-btn">Sign In</button> --}}
-                            <button class="btn btn--outline auth__btn btn--no-margin">
-                                <img src="./assets/icons/google.svg" alt="" class="btn__icon icon" />
-                                Sign in with Google
-                            </button>
+
+
                         </div>
                     </form>
+                    <a href="{{ url('/login/facebook') }}" style="margin-top: 30px;margin-bottom:-80px; width: 100%;">
+                        <button class="btn btn--outline auth__btn">
+                            <img src="./assets/icons/facebook.svg" alt="" class="btn__icon icon" />
+                            Sign in with Facebook
+                        </button>
+                    </a>
                     <p class="auth__text">
                         Don’t have an account yet?
                         <a href="{{route('register')}}" class="auth__link auth__text-link">Sign Up</a>

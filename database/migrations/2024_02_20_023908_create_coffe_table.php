@@ -17,8 +17,9 @@ return new class extends Migration
             $table->json('images')->nullable(); // Thêm cột để lưu trữ đường dẫn ảnh
             $table->string('reviews');
             $table->string('rating');
+            $table->string('quantity');
+            $table->unsignedBigInteger('coffe_shop_id');
             // Thêm các trường khác nếu cần thiết
-
             $table->timestamps();
         });
     }

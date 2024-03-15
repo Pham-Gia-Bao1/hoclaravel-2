@@ -13,15 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('favorites', function (Blueprint $table) {
+        Schema::create('shopping_cart', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id'); // Thêm trường user_id
             $table->unsignedBigInteger('product_id'); // Thêm trường user_id
-            // Thêm các trường khác nếu cần thiết
             $table->timestamps();
-            // // Tạo mối quan hệ giữa 2 bảng
-            // $table->foreign('user_id')->references('id')->on('users');
-            // $table->foreign('product_id')->references('id')->on('coffe');
+            // Cột khóa ngoại
+            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            // $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
 
         });
     }
@@ -33,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('favorites');
+        Schema::dropIfExists('shopping_cart');
     }
 };

@@ -13,21 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('coffee_shops', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->string('first_name')->nullable();
-            $table->string('last_name')->nullable();
             $table->string('address')->nullable();
-            $table->string('img')->nullable();
-            $table->string('phone_number')->nullable();
-            $table->rememberToken();
+            $table->string('phone_number');
+            $table->dateTime('opening_hours')->nullable();
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.
@@ -36,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('coffee_shops');
     }
 };

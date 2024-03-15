@@ -65,6 +65,10 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
+----->run composer-----------------------------------------------------------------
+## composer install
+----->generate key-----------------------------------------------------------------
+## php artisan key:generate
 
 -----> run preeze to have login <---------------------------------------------------
 ## composer require laravel/breeze --dev
@@ -79,4 +83,29 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 <!-- next step -->
 ## php artisan serve
 ------------------------------------------------------------------------------------
+
+-----> create database -------------------------------------------------------------
+<!-- config databasa -->
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=grocery_mart_laravel
+DB_USERNAME=root
+DB_PASSWORD=
+<!-- add data in to the databse -->
+## php artisan migrate
+<!-- next step -->
+## php artisan db:seed
+------------------------------------------------------------------------------------
+
+-----> php version  ----------------------------------------------------------------
+<!-- check php and laravel version to fix with this project -->
+## php -v
+## PHP Version 8.0.25
+-----> laravel version  ------------------------------------------------------------
+## php artisan --version
+## Laravel Framework 9.16.1
+
+
+
 

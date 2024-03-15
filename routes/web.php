@@ -1,15 +1,19 @@
 <?php
 
+// use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers;
 use App\Http\Controllers\DetailCoffeController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\TestController;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Http\Middleware\Authenticate;
+// use App\Http\Controllers\LoginController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -89,4 +93,11 @@ Route::get('AddNewCard', function () {
 //});
 // Route::get('test',[TestController::class, 'index'])->name('test');
 
-Route::get('test',[TestController::class, 'downloadDoc'])->name('test');
+// Route::get('login/facebook', function () {
+//     return view('auth.login_facebook');
+// })->name('login_facebook');
+
+
+
+Route::get('login/facebook', [LoginController::class, 'redirectToFacebook']);
+Route::get('login/facebook/callback', [LoginController::class, 'handleFacebookCallback']);
